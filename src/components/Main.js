@@ -1,7 +1,9 @@
+import Specials from './Specials'
+
 function Main () {
   return (
     <main>
-      <h2>Info</h2>
+      <Specials />
     </main>
   )
 }

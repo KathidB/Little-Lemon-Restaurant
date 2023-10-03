@@ -12,7 +12,7 @@ function Header () {
             ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button className='header-btn'>Reserve a Table</button>
+          <button className='lemon-btn'>Reserve a Table</button>
         </div>
         <img className='header-img' src={HeaderImg} alt='Restaurant food' />
       </div>

@@ -3,7 +3,7 @@ import Logo from '../assets/images/Logo.svg'
 function Nav () {
   return (
     <nav className='menu wrapper'>
-      <a href='/'>      
+      <a href='/'>
         <img src={Logo} alt='Little Lemon Logo' />
       </a>
       <ul className='nav list-tyle'>
