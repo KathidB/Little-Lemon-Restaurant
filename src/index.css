@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Markazi Text', 'Phudu', 
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,6 +34,12 @@ code {
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+}
+
+.section-title {
+  font-size: 32px;
+  font-family: 'Karla', sans-serif;
+
 }
 
 /* // MAIN MENU  */
@@ -71,13 +77,14 @@ code {
   align-items: top;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex: 1;
+  flex: 1; 
 }
 
 .header-text {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
   width: 50%;
   color: white;
 
@@ -85,6 +92,20 @@ code {
 
 .header-text h1 {
   color: #F4CE14;
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 85.02%; /* 54.413px */
+  margin-bottom: -30px; 
+}
+
+.header-text h2{
+  font-family: 'Markazi Text', serif;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: 85.02%;
 }
 
 .header-img {
@@ -100,17 +121,16 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
-.specials-title {
 
-  font-size: 32px;
-}
 
 .specials-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 10px; 
 }
 
 
@@ -125,6 +145,16 @@ code {
   border-top-left-radius: 16px;
   overflow: hidden;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+
+}
+
+.specials-name{
+  color: black;
+  font-family: Karla;
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 90%;
 }
 
 .specials-img {
@@ -132,14 +162,14 @@ code {
   width: 300px;
 }
 
-.specials-info {
+.specials-info { 
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.specials-info p {
+.specials-desc {
   color: #495E57;
 }
 
@@ -154,21 +184,109 @@ code {
   color: #333333;
 }
 
-.specials-price {
+.specials-names {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.specials-price p {
+.specials-prices {
   font-weight: bold;
   color: #EE9972;
 }
 
 
+/* // TESTIMONIALS  */
+
+.testimonials {
+  background-color: #D9D9D9;
+  padding-bottom: 25px;
+}
+
+.testimonials div h2 {
+  text-align: center;
+}
+
+.testimonials-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.testimonial-card {
+  padding: 10px;
+  width: 250px;
+  background-color: white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  gap: 0 15px;
+  
+}
+.testimonial-user p {
+  font-weight: bold;
+}
+
+.user-img {
+  border-radius: 5px;
+  box-shadow: 0 0 1px black;
+}
 
 
+/* // RESTAURANT INFO */
 
+.restaurant-section{
+  display: flex; 
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 100px;
+}
+
+.restaurant-info{
+  min-width: 35%;
+  max-width: 50%;
+  flex: 1;
+}
+
+.chefs-img{
+  height:  300px;
+  width: 250px;
+  object-fit: cover;
+  object-position: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+}
+
+.chef-one{
+  position: relative;
+  left: 50px;
+  top: 50px;
+
+}
+
+
+.restaurant-location{
+  margin-top: -20px;
+  font-family: Markazi Text;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #333333;
+}
+.restaurant-desc{
+  text-align: justify;
+font-family: Karla;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
 
 
 
