@@ -40,12 +40,15 @@ function Footer () {
           <ul className='list-tyle'>
             <li>Cicago Berkley St.</li>
             <li>+01 123412345</li>
-            <a
-              style={{ textDecoration: 'none', color: 'black' }}
-              href={`mailto:${'littlelemon@lemon.com'}`}
-            >
-              @LittleLemon
-            </a>
+            <li>
+              {' '}
+              <a
+                style={{ textDecoration: 'none', color: 'black' }}
+                href={`mailto:${'littlelemon@lemon.com'}`}
+              >
+                @LittleLemon
+              </a>
+            </li>
           </ul>
         </div>
         <div>

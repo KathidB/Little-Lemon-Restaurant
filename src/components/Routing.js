@@ -4,7 +4,7 @@ import About from './Pages/About'
 import Menu from './Pages/Menu'
 import OrderOnline from './Pages/OrderOnline'
 import Login from './Pages/Login'
-import Reservations from './Pages/Reservations'
+import BookingPage from './Pages/BookingPage'
 
 function Routing () {
   return (
@@ -13,7 +13,7 @@ function Routing () {
         <Route path='/' element={<Main />} />
         <Route path='/About' element={<About />} />
         <Route path='/Menu' element={<Menu />} />
-        <Route path='/Reservations' element={<Reservations />} />
+        <Route path='/BookingPage' element={<BookingPage />} />
         <Route path='/OrderOnline' element={<OrderOnline />} />
         <Route path='/Login' element={<Login />} />
       </Routes>

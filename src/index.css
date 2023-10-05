@@ -338,6 +338,10 @@ code {
   width: 100%;
 }
 
+.footer li {
+  padding: 3px 0;
+}
+
 .footer-header {
   color: #495E57;
 }

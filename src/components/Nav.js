@@ -18,7 +18,7 @@ function Nav () {
           <Link to='/Menu'>Menu</Link>
         </li>
         <li>
-          <Link to='/Reservations'>Reservations</Link>
+          <Link to='/BookingPage'>Reservations</Link>
         </li>
         <li>
           <Link to='/OrderOnline'>Order Online</Link>
