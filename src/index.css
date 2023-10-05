@@ -59,7 +59,11 @@ code {
   color: black;
   text-decoration: none;
   font-weight: bold;
+  transition: color .3s;
+}
 
+.nav li a:hover {
+ color: rgb(102, 102, 102);
 }
 
 .nav li:not(:last-child) {
@@ -291,12 +295,31 @@ line-height: normal;
 
 
 
+/* // LOGIN FORM */
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
 
 
 
 /* /// FOOTER  */
 .footer {
   background-color: #D9D9D9;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .footer-header {

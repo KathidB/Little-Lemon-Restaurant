@@ -1,29 +1,30 @@
 import Logo from '../assets/images/Logo.svg'
+import { Link } from 'react-router-dom'
 
 function Nav () {
   return (
     <nav className='menu wrapper'>
-      <a href='/'>
+      <Link to='/'>
         <img src={Logo} alt='Little Lemon Logo' />
-      </a>
+      </Link>
       <ul className='nav list-tyle'>
         <li>
-          <a href='/'>Home</a>
+          <Link to='/'>Home</Link>
         </li>
         <li>
-          <a href='/'>About</a>
+          <Link to='/About'>About</Link>
         </li>
         <li>
-          <a href='/'>Menu</a>
+          <Link to='/Menu'>Menu</Link>
         </li>
         <li>
-          <a href='/'>Reservations</a>
+          <Link to='/Reservations'>Reservations</Link>
         </li>
         <li>
-          <a href='/'>Order Online</a>
+          <Link to='/OrderOnline'>Order Online</Link>
         </li>
         <li>
-          <a href='/'>Login</a>
+          <Link to='/Login'>Login</Link>
         </li>
       </ul>
     </nav>
