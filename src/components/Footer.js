@@ -38,9 +38,14 @@ function Footer () {
         <div>
           <h3 className='footer-header'>Contact</h3>
           <ul className='list-tyle'>
-            <li>Adress</li>
-            <li>Phone Number</li>
-            <li>Email</li>
+            <li>Cicago Berkley St.</li>
+            <li>+01 123412345</li>
+            <a
+              style={{ textDecoration: 'none', color: 'black' }}
+              href={`mailto:${'littlelemon@lemon.com'}`}
+            >
+              @LittleLemon
+            </a>
           </ul>
         </div>
         <div>

@@ -8,11 +8,12 @@ const Restaurant = () => {
         <h2 className='section-title'>Little Lemon</h2>
         <p className='restaurant-location'>Chicago</p>
         <p className='restaurant-desc'>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-          ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-          duis enim velit mollit.
+          Located in the heart of Chicago, Little Lemon is your gateway to a
+          culinary journey through Mediterranean and Italian flavors. Our
+          specialties include the refreshing Greek Salad, classic Bruschetta,
+          and the irresistible Lemon Dessert. Explore the world of flavors at
+          Little Lemon Chicago. Join us today for an unforgettable culinary
+          adventure!
         </p>
       </div>
       <div className='restaurant-imgs'>
