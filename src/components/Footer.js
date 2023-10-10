@@ -1,11 +1,14 @@
 import FooterImg from '../assets/images/restaurant footer.jpg'
+import FooterLogo from "../assets/images/footer-logo.png"
+
 import { Link } from 'react-router-dom'
 
 function Footer () {
   return (
     <footer className='footer'>
       <div className='wrapper footer-box'>
-        <img
+        <img 
+        className='footer-logo'
           style={{ height: '250px', width: '200px' }}
           src={FooterImg}
           alt='View of the inside of the restaurant'

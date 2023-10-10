@@ -1,4 +1,6 @@
 import HeaderImg from '../assets/images/restauranfood.jpg'
+import { Link } from 'react-router-dom'
+
 function Header () {
   return (
     <header className='header'>
@@ -12,7 +14,10 @@ function Header () {
             ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button className='lemon-btn'>Reserve a Table</button>
+
+          <Link to='/BookingPage'>
+            <button className='lemon-btn'>Reserve a Table</button>
+          </Link>
         </div>
         <img className='header-img' src={HeaderImg} alt='Restaurant food' />
       </div>
