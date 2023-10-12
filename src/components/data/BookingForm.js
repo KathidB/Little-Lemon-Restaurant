@@ -7,10 +7,6 @@ function BookingForm ({ availableTimes, setAvailableTimes }) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    console.log(date)
-    console.log(guests)
-    console.log(occasion)
-    console.log(availableTimes)
   }
 
   return (
@@ -23,7 +19,6 @@ function BookingForm ({ availableTimes, setAvailableTimes }) {
           type='date'
           id='res-date'
         />
-
         <label htmlFor='res-time'>Choose Time</label>
         <select
           value={availableTimes}
@@ -55,10 +50,10 @@ function BookingForm ({ availableTimes, setAvailableTimes }) {
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-
         <input type='submit' value='Make Your Reservation' />
       </form>
     </>
   )
 }
+
 export default BookingForm

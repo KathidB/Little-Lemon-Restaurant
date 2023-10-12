@@ -7,13 +7,15 @@ import Login from './Pages/Login'
 import BookingPage from './Pages/BookingPage'
 
 function Routing () {
+
+  let test = "Test"
   return (
     <>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/About' element={<About />} />
         <Route path='/Menu' element={<Menu />} />
-        <Route path='/BookingPage' element={<BookingPage />} />
+        <Route path='/BookingPage' element={<BookingPage test={test} />} />
         <Route path='/OrderOnline' element={<OrderOnline />} />
         <Route path='/Login' element={<Login />} />
       </Routes>

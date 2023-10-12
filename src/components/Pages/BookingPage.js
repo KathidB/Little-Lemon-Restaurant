@@ -1,18 +1,36 @@
 import BookingForm from '../data/BookingForm'
-import { useState } from 'react'
+import { useEffect, useReducer } from 'react'
+import { fetchAPI } from '../data/bookingsAPI'
 
 function BookingPage () {
-  const [availableTimes, setAvailableTimes] = useState([
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00'
-  ])
+  const [availableTimes, setAvailableTimes] = useReducer(
+    updateTimes,
+    initializeTimes()
+  )
+
+  function updateTimes () {
+    return fetchAPI()
+  }
+
+  // pobierz dane z bookignForm - dokłądnie "date"
+  // potem upewnij sie, ze dynamicznie zmienia się availableTimes
+
+  useEffect(() => {
+    function updateTimes () {
+      return fetchAPI()
+    }
+    updateTimes()
+  }, [availableTimes])
+
+  function initializeTimes () {
+    let today = new Date().toISOString().split('T')[0]
+    return fetchAPI(today)
+  }
 
   return (
     <div className='wrapper'>
       <h2>Booking Page</h2>
+
       <BookingForm
         availableTimes={availableTimes}
         setAvailableTimes={setAvailableTimes}
