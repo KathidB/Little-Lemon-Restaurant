@@ -1,5 +1,5 @@
 import BookingForm from '../data/BookingForm'
-import { useEffect, useReducer } from 'react'
+import { useReducer } from 'react'
 import { fetchAPI } from '../data/bookingsAPI'
 
 function BookingPage () {
@@ -8,32 +8,31 @@ function BookingPage () {
     initializeTimes()
   )
 
-  function updateTimes () {
-    return fetchAPI()
+  function updateTimes (action) {
+    console.log(action);
+    // console.log(state);
+    const newDate = action.date // Pobierz nową datę z akcji
+    return fetchAPI(newDate) // Użyj wybranej daty do aktualizacji dostępnych czasów
   }
-
-  // pobierz dane z bookignForm - dokłądnie "date"
-  // potem upewnij sie, ze dynamicznie zmienia się availableTimes
-
-  useEffect(() => {
-    function updateTimes () {
-      return fetchAPI()
-    }
-    updateTimes()
-  }, [availableTimes])
 
   function initializeTimes () {
     let today = new Date().toISOString().split('T')[0]
     return fetchAPI(today)
   }
 
+  function handleDateChange (newDate) {
+    console.log(newDate)
+    // Wywołaj funkcję dispatch, aby zaktualizować dostępne czasy w reducerze
+    setAvailableTimes({ date: newDate })
+  }
+
   return (
     <div className='wrapper'>
       <h2>Booking Page</h2>
-
       <BookingForm
         availableTimes={availableTimes}
         setAvailableTimes={setAvailableTimes}
+        onDateChange={handleDateChange}
       />
     </div>
   )

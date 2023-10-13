@@ -1,12 +1,24 @@
 import { useState } from 'react'
 
-function BookingForm ({ availableTimes, setAvailableTimes }) {
+function BookingForm ({ availableTimes, onDateChange }) {
   const [date, setDate] = useState('')
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Birthday')
+  const [selectedTime, setSelectedTime] = useState('')
 
   function handleSubmit (e) {
     e.preventDefault()
+    console.log(date)
+    console.log(guests)
+    console.log(occasion)
+    console.log(selectedTime)
+  }
+
+  // Dodaj obsługę zmiany daty i wywołaj przekazaną funkcję `onDateChange`
+  function handleDateChange (e) {
+    const newDate = e.target.value
+    setDate(newDate)
+    onDateChange(newDate)
   }
 
   return (
@@ -15,14 +27,14 @@ function BookingForm ({ availableTimes, setAvailableTimes }) {
         <label htmlFor='res-date'>Choose Date</label>
         <input
           value={date}
-          onChange={e => setDate(e.target.value)}
+          onChange={handleDateChange}
           type='date'
           id='res-date'
         />
         <label htmlFor='res-time'>Choose Time</label>
         <select
-          value={availableTimes}
-          onChange={e => setAvailableTimes([e.target.value])}
+          value={selectedTime}
+          onChange={e => setSelectedTime([e.target.value])}
           id='res-time'
         >
           {availableTimes.map(times => (
