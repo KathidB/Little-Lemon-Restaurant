@@ -35,7 +35,7 @@ function BookingPage () {
 
   return (
     <div className='wrapper'>
-      <h2>Booking Page</h2>
+      <h2 style={{ textAlign: 'center' }}>Booking Page</h2>
       <BookingForm
         availableTimes={availableTimes}
         dispatch={dispatch}

@@ -25,7 +25,7 @@ function Specials () {
             </div>
 
             <button className='specials-btn'>
-              Order a delivery
+              Order a delivery{' '}
               <img
                 style={{ width: '20px' }}
                 src={delivery}

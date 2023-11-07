@@ -13,11 +13,12 @@ function Testimonials () {
   }
   calculateAverageRaging()
 
+  // Function displays  4 reviews and makes sure that displays only user reviews with rating above 3 stars.
   return (
     <section className='testimonials'>
       <div className='wrapper'>
         <h2 className='section-title'>Testimonials</h2>
-        <p>Average rating: {(results / UserReviews.length).toFixed(1)}</p>
+
         <div className='testimonials-cards'>
           {UserReviews ? (
             UserReviews.filter(review => review.rate > 3)
@@ -44,8 +45,12 @@ function Testimonials () {
             <p>Data pending...</p>
           )}
         </div>
+        <p style={{ textAlign: 'right' }}>
+          Average rating: {(results / UserReviews.length).toFixed(1)}
+        </p>
       </div>
     </section>
   )
 }
+//BB
 export default Testimonials

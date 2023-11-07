@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import vertiburger from '../../assets/images/vertiburger.jpg'
 
 function BookingForm ({ availableTimes, onDateChange }) {
   const [date, setDate] = useState('')
@@ -24,7 +25,7 @@ function BookingForm ({ availableTimes, onDateChange }) {
   }
 
   return (
-    <>
+    <div className='booking-form'>
       <form className='form' onSubmit={handleSubmit}>
         <label data-testid='chooseDate' htmlFor='res-date'>
           Choose Date<span style={{ color: 'red' }}>*</span>
@@ -67,10 +68,12 @@ function BookingForm ({ availableTimes, onDateChange }) {
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-        <input type='submit' value='Make Your Reservation' />
+        <input className='submit-form' type='submit' value='Make Your Reservation' />
       </form>
-    </>
+
+      <img className='booking-burger' src={vertiburger} alt='huge burger' />
+    </div>
   )
 }
-
+//BB
 export default BookingForm

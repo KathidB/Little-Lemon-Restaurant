@@ -14,9 +14,7 @@ function Footer () {
           alt='View of the inside of the restaurant'
         />
         <div>
-          <h3 className='footer-header'>
-            Doormat <br /> Navigation
-          </h3>
+          <h3 className='footer-header'>Doormat Navigation</h3>
           <ul className='footer-nav list-tyle'>
             <li>
               <Link to='/'>Home</Link>
@@ -66,5 +64,5 @@ function Footer () {
     </footer>
   )
 }
-
+//BB
 export default Footer
