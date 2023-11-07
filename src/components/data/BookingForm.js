@@ -4,7 +4,7 @@ function BookingForm ({ availableTimes, onDateChange }) {
   const [date, setDate] = useState('')
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Birthday')
-  const [selectedTime, setSelectedTime] = useState('')
+  const [selectedTime, setSelectedTime] = useState(availableTimes[0])
 
   function handleSubmit (e) {
     e.preventDefault()
@@ -13,6 +13,8 @@ function BookingForm ({ availableTimes, onDateChange }) {
     console.log(occasion)
     console.log(selectedTime)
   }
+
+  console.log()
 
   // Dodaj obsługę zmiany daty i wywołaj przekazaną funkcję `onDateChange`
   function handleDateChange (e) {
@@ -23,9 +25,12 @@ function BookingForm ({ availableTimes, onDateChange }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='res-date'>Choose Date</label>
+      <form className='form' onSubmit={handleSubmit}>
+        <label data-testid='chooseDate' htmlFor='res-date'>
+          Choose Date<span style={{ color: 'red' }}>*</span>
+        </label>
         <input
+          required
           value={date}
           onChange={handleDateChange}
           type='date'
@@ -34,7 +39,7 @@ function BookingForm ({ availableTimes, onDateChange }) {
         <label htmlFor='res-time'>Choose Time</label>
         <select
           value={selectedTime}
-          onChange={e => setSelectedTime([e.target.value])}
+          onChange={e => setSelectedTime(e.target.value)}
           id='res-time'
         >
           {availableTimes.map(times => (
@@ -57,7 +62,7 @@ function BookingForm ({ availableTimes, onDateChange }) {
         <select
           value={occasion}
           onChange={e => setOccasion(e.target.value)}
-          id='occastion'
+          id='occasion'
         >
           <option>Birthday</option>
           <option>Anniversary</option>

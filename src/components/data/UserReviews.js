@@ -17,13 +17,21 @@ const UserReviews = [
     id: 1,
     name: 'Mary',
     lastName: 'Smith',
-    rate: 4,
+    rate: 2,
     img: userTwo,
-    review:
-      'I enjoyed the food, although the service was a bit slow. Overall, a good dining experience.'
+    review: 'Tragedy, never again!'
   },
   {
     id: 2,
+    name: 'Emily',
+    lastName: 'Wilson',
+    rate: 4,
+    img: userFour,
+    review:
+      'I had a great time at this restaurant. The food was delicious, and the ambiance was lovely.'
+  },
+  {
+    id: 3,
     name: 'Mark',
     lastName: 'Johnson',
     rate: 5,
@@ -32,13 +40,22 @@ const UserReviews = [
       'This restaurant exceeded my expectations. The food was amazing, and the staff was friendly and attentive.'
   },
   {
-    id: 3,
-    name: 'Emily',
-    lastName: 'Wilson',
+    id: 4,
+    name: 'Mary',
+    lastName: 'Smith',
     rate: 4,
-    img: userFour,
+    img: userTwo,
     review:
-      'I had a great time at this restaurant. The food was delicious, and the ambiance was lovely.'
+      'I enjoyed the food, although the service was a bit slow. Overall, a good dining experience.'
+  },
+  {
+    id: 5,
+    name: 'Joanna',
+    lastName: 'Belg',
+    rate: 5,
+    img: userTwo,
+    review:
+      'I enjoyed the food, although the service was a bit slow. Overall, a good dining experience.'
   }
 ]
 

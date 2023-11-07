@@ -26,7 +26,7 @@ code {
 }
 
 .lemon-btn {
-  padding: 20px;
+  padding: 16px;
   width: 180px;
   border-radius: 8px;
   background-color: #F4CE14;
@@ -200,7 +200,7 @@ code {
 
 .specials-prices {
   font-weight: bold;
-  color: #EE9972;
+  color: #f5834e;
 }
 
 
@@ -218,30 +218,29 @@ code {
 .testimonials-cards {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   flex-wrap: wrap;
   gap: 10px;
+ 
 }
 
 .testimonial-card {
   padding: 10px;
   width: 250px;
   background-color: white;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
 }
 
 .testimonial-user {
   display: flex;
   align-items: center;
   gap: 0 15px;
-
-}
-
-.testimonial-user p {
   font-weight: bold;
 }
 
 .user-img {
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 0 1px black;
 }
 
@@ -299,6 +298,16 @@ code {
 }
 
 
+/* // BOOKING PAGE */
+
+form {
+  text-align: center;
+}
+
+
+input, label {
+  margin: 5px;
+}
 
 
 /* // LOGIN FORM */
@@ -343,10 +352,11 @@ code {
   bottom: 0;
   left: 0;
   width: 100%;
+
 }
 
 .footer li {
-  padding: 3px 0;
+  padding: 3px 0; 
 }
 
 .footer-header {
@@ -358,6 +368,7 @@ code {
   justify-content: space-between;
   align-items: top;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .footer-nav li a {
@@ -367,4 +378,8 @@ code {
 
 .footer-logo{
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+}
+
+.social-media li {
+  cursor: pointer;
 }

@@ -2,8 +2,12 @@ import BookingForm from '../data/BookingForm'
 import { useReducer } from 'react'
 import { fetchAPI } from '../data/bookingsAPI'
 
-//DOKUMENTACJA:
+export function initializeTimes () {
+  let today = new Date().toISOString().split('T')[0]
+  return fetchAPI(today)
+}
 
+//DOKUMENTACJA:
 function BookingPage () {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
   //Function accepts action - as a result of dispatch from hangleDateChange.
@@ -28,10 +32,6 @@ function BookingPage () {
   // These hours are used to populate the availableTimes state, which is then used to map the available hours
   // in the booking form. As a result, the hours are different every time the user changes the date for table reservation.
   // APP Written by B.B. if uploaded by someone else then it was stolen. Thanks.
-  function initializeTimes () {
-    let today = new Date().toISOString().split('T')[0]
-    return fetchAPI(today)
-  }
 
   return (
     <div className='wrapper'>

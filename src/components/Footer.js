@@ -1,5 +1,5 @@
 import FooterImg from '../assets/images/restaurant footer.jpg'
-import FooterLogo from "../assets/images/footer-logo.png"
+// import FooterLogo from '../assets/images/footer-logo.png'
 
 import { Link } from 'react-router-dom'
 
@@ -7,8 +7,8 @@ function Footer () {
   return (
     <footer className='footer'>
       <div className='wrapper footer-box'>
-        <img 
-        className='footer-logo'
+        <img
+          className='footer-logo'
           style={{ height: '250px', width: '200px' }}
           src={FooterImg}
           alt='View of the inside of the restaurant'
@@ -28,7 +28,7 @@ function Footer () {
               <Link to='/Menu'>Menu</Link>
             </li>
             <li>
-              <Link to='/Reservations'>Reservations</Link>
+              <Link to='/BookingPage'>Reservations</Link>
             </li>
             <li>
               <Link to='/OrderOnline'>Order Online</Link>
@@ -41,7 +41,7 @@ function Footer () {
         <div>
           <h3 className='footer-header'>Contact</h3>
           <ul className='list-tyle'>
-            <li>Cicago Berkley St.</li>
+            <li>Chicago Berkley St.</li>
             <li>+01 123412345</li>
             <li>
               {' '}
@@ -56,7 +56,7 @@ function Footer () {
         </div>
         <div>
           <h3 className='footer-header'>Social Media Links</h3>
-          <ul className='list-tyle'>
+          <ul className='list-tyle social-media'>
             <li>Facebook</li>
             <li>Instagram</li>
             <li>TikTok</li>
