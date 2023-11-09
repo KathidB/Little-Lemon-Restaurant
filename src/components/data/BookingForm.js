@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import vertiburger from '../../assets/images/vertiburger.jpg'
-import ConfirmedBooking from '../ConfirmedBooking'
 
 function BookingForm ({ availableTimes, onDateChange, submitForm }) {
   const [date, setDate] = useState('')
@@ -14,10 +13,8 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
     // console.log(guests)
     // console.log(occasion)
     // console.log(selectedTime)
-  
   }
 
-  // Dodaj obsługę zmiany daty i wywołaj przekazaną funkcję `onDateChange`
   function handleDateChange (e) {
     const newDate = e.target.value
     setDate(newDate)

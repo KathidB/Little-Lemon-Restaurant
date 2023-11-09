@@ -1,4 +1,15 @@
+import { useLocation } from 'react-router-dom'
+
 function ConfirmedBooking () {
+  const { state } = useLocation()
+
+  const { date, guests, occasion, selectedTime } = state
+
+  console.log(date)
+  console.log(guests)
+  console.log(occasion)
+  console.log(selectedTime)
+
   return (
     <>
       <section style={{ textAlign: 'center' }} className='wrapper'>
@@ -9,6 +20,19 @@ function ConfirmedBooking () {
             Successful!
           </span>
         </p>
+        <ol
+          style={{
+            listStyle: 'none',
+            textAlign: 'center',
+            fontWeight: 'bold',
+            padding: 0
+          }}
+        >
+          <li>Date: {date}</li>
+          <li>Table for: {guests}</li>
+          <li>Occasion: {occasion}</li>
+          <li>Time: {selectedTime}</li>
+        </ol>
         <p>
           Thank you for submitting the form. Your reservation has been
           confirmed, and you're all set!

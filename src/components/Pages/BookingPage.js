@@ -2,6 +2,7 @@ import BookingForm from '../data/BookingForm'
 import { useReducer } from 'react'
 import { fetchAPI, submitAPI } from '../data/bookingsAPI'
 import { useNavigate } from 'react-router-dom'
+import ConfirmedBooking from '../ConfirmedBooking'
 
 export function initializeTimes () {
   let today = new Date().toISOString().split('T')[0]
@@ -43,7 +44,6 @@ function BookingPage () {
   // przeanalizuj kod submitForm oraz submitAPI!
 
   async function submitForm (date, guests, occasion, selectedTime) {
-    console.log(date, guests, occasion, selectedTime)
     try {
       const submissionResult = await submitAPI(
         date,
@@ -53,7 +53,9 @@ function BookingPage () {
       )
 
       if (submissionResult === true) {
-        navigate('/ConfirmedBooking')
+        navigate('/ConfirmedBooking', {
+          state: { date, guests, occasion, selectedTime }
+        })
       } else {
         return false
       }

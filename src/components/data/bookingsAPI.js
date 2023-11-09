@@ -24,13 +24,13 @@ export function fetchAPI (date) {
 
   return result
 }
-
+// form has 90% to succesfuly submit data.
 export function submitAPI (formData) {
   return new Promise(resolve => {
     setTimeout(() => {
       const randomValue = Math.random()
 
-      if (formData && randomValue <= 0.5) {
+      if (formData && randomValue <= 0.9) {
         resolve(true)
       } else {
         resolve(false)
