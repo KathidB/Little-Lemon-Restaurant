@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import vertiburger from '../../assets/images/vertiburger.jpg'
+import ConfirmedBooking from '../ConfirmedBooking'
 
-function BookingForm ({ availableTimes, onDateChange }) {
+function BookingForm ({ availableTimes, onDateChange, submitForm }) {
   const [date, setDate] = useState('')
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Birthday')
@@ -9,13 +10,12 @@ function BookingForm ({ availableTimes, onDateChange }) {
 
   function handleSubmit (e) {
     e.preventDefault()
-    console.log(date)
-    console.log(guests)
-    console.log(occasion)
-    console.log(selectedTime)
+    // console.log(date)
+    // console.log(guests)
+    // console.log(occasion)
+    // console.log(selectedTime)
+  
   }
-
-  console.log()
 
   // Dodaj obsługę zmiany daty i wywołaj przekazaną funkcję `onDateChange`
   function handleDateChange (e) {
@@ -68,7 +68,12 @@ function BookingForm ({ availableTimes, onDateChange }) {
           <option>Birthday</option>
           <option>Anniversary</option>
         </select>
-        <input className='submit-form' type='submit' value='Make Your Reservation' />
+        <input
+          className='submit-form'
+          type='submit'
+          value='Make Your Reservation'
+          onClick={() => submitForm(date, guests, occasion, selectedTime)}
+        />
       </form>
 
       <img className='booking-burger' src={vertiburger} alt='huge burger' />

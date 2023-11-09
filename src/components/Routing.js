@@ -5,10 +5,10 @@ import Menu from './Pages/Menu'
 import OrderOnline from './Pages/OrderOnline'
 import Login from './Pages/Login'
 import BookingPage from './Pages/BookingPage'
+import ConfirmedBooking from './ConfirmedBooking'
 
 function Routing () {
-
-  let test = "Test"
+  let test = 'Test'
   return (
     <>
       <Routes>
@@ -18,6 +18,7 @@ function Routing () {
         <Route path='/BookingPage' element={<BookingPage test={test} />} />
         <Route path='/OrderOnline' element={<OrderOnline />} />
         <Route path='/Login' element={<Login />} />
+        <Route path='/ConfirmedBooking' element={<ConfirmedBooking />} />
       </Routes>
     </>
   )

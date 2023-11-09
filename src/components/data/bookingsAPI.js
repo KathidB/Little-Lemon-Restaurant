@@ -26,5 +26,15 @@ export function fetchAPI (date) {
 }
 
 export function submitAPI (formData) {
-  return true
+  return new Promise(resolve => {
+    setTimeout(() => {
+      const randomValue = Math.random()
+
+      if (formData && randomValue <= 0.5) {
+        resolve(true)
+      } else {
+        resolve(false)
+      }
+    }, 1000)
+  })
 }
