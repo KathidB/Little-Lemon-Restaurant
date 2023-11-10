@@ -1,38 +1,59 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function ConfirmedBooking () {
   const { state } = useLocation()
+  const navigate = useNavigate()
 
-  const { date, guests, occasion, selectedTime } = state
+  //If someone is trying to acces this component before make a reservation he's automatically moved to reservation page.
+  useEffect(() => {
+    if (!state) {
+      navigate('/BookingPage')
+    }
+  }, [state, navigate])
 
-  console.log(date)
-  console.log(guests)
-  console.log(occasion)
-  console.log(selectedTime)
+  if (!state) {
+    return <p>Brak danych rezerwacji. Wróć i dokonaj rezerwacji.</p>
+  }
+
+  const { name, lastName, email, date, guests, occasion, selectedTime } = state
 
   return (
     <>
       <section style={{ textAlign: 'center' }} className='wrapper'>
-        <h2 className='section-title'>Booking confirmation</h2>
+        <h2 className='section-title'>Booking Confirmation</h2>
+
         <p>
-          Booking Confirmation{' '}
           <span style={{ color: 'green', fontWeight: 'bold' }}>
-            Successful!
+            Reservation Successful!
           </span>
         </p>
-        <ol
-          style={{
-            listStyle: 'none',
-            textAlign: 'center',
-            fontWeight: 'bold',
-            padding: 0
-          }}
+        <p>
+          Hello{' '}
+          <span style={{ fontWeight: 'bold' }}>
+            {name} {lastName}
+          </span>
+        </p>
+        <ul
+          className='booking-info'
+          style={{ listStyle: 'none', textAlign: 'center', padding: 0 }}
         >
-          <li>Date: {date}</li>
-          <li>Table for: {guests}</li>
-          <li>Occasion: {occasion}</li>
-          <li>Time: {selectedTime}</li>
-        </ol>
+          <li>
+            Date: <span>{date}</span>
+          </li>
+          <li>
+            Time: <span>{selectedTime}</span>
+          </li>
+          <li>
+            Table for: <span>{guests}</span>
+          </li>
+          <li>
+            Occasion: <span>{occasion}</span>
+          </li>
+          <li>
+            Email: <span>{email}</span>
+          </li>
+        </ul>
         <p>
           Thank you for submitting the form. Your reservation has been
           confirmed, and you're all set!
@@ -44,5 +65,5 @@ function ConfirmedBooking () {
     </>
   )
 }
-
+//B.B
 export default ConfirmedBooking
