@@ -8,7 +8,8 @@ const seededRandom = function (seed) {
 }
 
 export function fetchAPI (date) {
-  let result = []
+  let result = ['Choose time']
+
   let dt = new Date(date)
   let seed = dt.getDate()
 
@@ -24,7 +25,7 @@ export function fetchAPI (date) {
 
   return result
 }
-// form has 90% to succesfuly submit data.
+// form has 85% to succesfuly submit data.
 export function submitAPI (formData) {
   return new Promise(resolve => {
     setTimeout(() => {

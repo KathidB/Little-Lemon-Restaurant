@@ -43,6 +43,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
   function handleDateChange (e) {
     const newDate = e.target.value
     setDate(newDate)
+    setSelectedTime(null)
     onDateChange(newDate)
   }
 
@@ -52,7 +53,8 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
       lastName &&
       isEmailValid(email.value) &&
       date &&
-      selectedTime &&
+      selectedTime !== null &&
+      typeof selectedTime !== 'object' &&
       guests >= 1 &&
       guests <= 10 &&
       occasion !== 'Choose occasion'
