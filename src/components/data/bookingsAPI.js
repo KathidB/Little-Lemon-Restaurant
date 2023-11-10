@@ -30,7 +30,7 @@ export function submitAPI (formData) {
     setTimeout(() => {
       const randomValue = Math.random()
 
-      if (formData && randomValue <= 0.9) {
+      if (formData && randomValue <= 0.85) {
         resolve(true)
       } else {
         resolve(false)

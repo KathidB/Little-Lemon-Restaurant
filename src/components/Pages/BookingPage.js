@@ -1,5 +1,5 @@
 import BookingForm from '../data/BookingForm'
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import { fetchAPI, submitAPI } from '../data/bookingsAPI'
 import { useNavigate } from 'react-router-dom'
 // import ConfirmedBooking from '../ConfirmedBooking'
@@ -15,6 +15,7 @@ export function updateTimes (state, action) {
 }
 
 function BookingPage () {
+  const [formStatus, setFormStatus] = useState(null)
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
   const navigate = useNavigate()
   //Function accepts action - as a result of dispatch from hangleDateChange.
@@ -64,11 +65,12 @@ function BookingPage () {
       )
 
       if (submissionResult === true) {
+        setFormStatus(true)
         navigate('/ConfirmedBooking', {
           state: { name, lastName, email, date, guests, occasion, selectedTime }
         })
       } else {
-        return false
+        setFormStatus(false)
       }
     } catch (error) {
       console.error('An error occurred:', error)
@@ -83,6 +85,7 @@ function BookingPage () {
         availableTimes={availableTimes}
         dispatch={dispatch}
         onDateChange={handleDateChange}
+        formStatus={formStatus}
       />
     </div>
   )

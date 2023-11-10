@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import vertiburger from '../../assets/images/vertiburger.jpg'
 
-function BookingForm ({ availableTimes, onDateChange, submitForm }) {
+function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) {
   const [name, setName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState({
@@ -20,9 +20,6 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
   nextYear.setFullYear(nextYear.getFullYear() + 1)
   const nextYearDate = nextYear.toISOString().split('T')[0]
 
-
-
-
   function isEmailValid (email) {
     return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)
   }
@@ -38,7 +35,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
       occasion,
       selectedTime
     )
-    clearForm()
+    if (formStatus === true) {
+      clearForm()
+    }
   }
 
   function handleDateChange (e) {
@@ -59,6 +58,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
       occasion !== 'Choose occasion'
     )
   }
+
   const clearForm = () => {
     setName('')
     setLastName('')
@@ -75,7 +75,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
   return (
     <div className='booking-form'>
       <form className='form' onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name *</label>
+        <label htmlFor='name'>Name</label>
         <input
           value={name}
           onChange={e => setName(e.target.value)}
@@ -86,7 +86,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
           required
         />
 
-        <label htmlFor='lastName'>Last name *</label>
+        <label htmlFor='lastName'>Last name</label>
         <input
           value={lastName}
           onChange={e => setLastName(e.target.value)}
@@ -97,7 +97,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
           required
         />
 
-        <label htmlFor='email'>Email *</label>
+        <label htmlFor='email'>Email</label>
         <input
           value={email.value}
           type='email'
@@ -177,8 +177,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm }) {
           type='submit'
           disabled={!checkValidation()}
         >
-          Make Your Reservation
+          Make Reservation
         </button>
+        {formStatus === false ? <p>Form send failed. Try again.</p> : null}
       </form>
 
       <img
