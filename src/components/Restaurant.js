@@ -23,7 +23,7 @@ const Restaurant = () => {
           alt='Chefs of the restaurant'
         />
         <img
-          className='chefs-img'
+          className='chefs-img chef-two'
           src={imageChefTwo}
           alt='Chefs of the restaurant'
         />

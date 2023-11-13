@@ -45,7 +45,7 @@ function Testimonials () {
             <p>Data pending...</p>
           )}
         </div>
-        <p style={{ textAlign: 'right' }}>
+        <p className="testimonial-rating">
           Average rating: {(results / UserReviews.length).toFixed(1)}
         </p>
       </div>

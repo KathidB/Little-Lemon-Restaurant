@@ -35,7 +35,6 @@ code {
   font-size: 16px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
   cursor: pointer;
-
 }
 
 .section-title {
@@ -244,12 +243,17 @@ code {
   box-shadow: 0 0 1px black;
 }
 
+.testimonial-rating{
+  text-align: right;
+}
+
 
 /* // RESTAURANT INFO */
 
 .restaurant-section {
   display: flex;
   justify-content: space-between;
+ 
   flex-wrap: wrap;
   gap: 20px;
   padding-bottom: 70px;
@@ -392,13 +396,14 @@ font-weight: bold;
 /* /// FOOTER  */
 
 
-.footer {
+.footer { 
   background-color: #D9D9D9;
-  position: relative;
-  bottom: 0;
-  left: 0;
   width: 100%;
+}
 
+
+.social-media li {
+  cursor: pointer;
 }
 
 .footer li {
@@ -415,9 +420,10 @@ font-weight: bold;
 .footer-box {
   display: flex;
   justify-content: space-between;
-  align-items: top;
+  align-items: flex-start; /* Align items at the start for proper spacing */
   flex-wrap: wrap;
   gap: 10px;
+  padding: 20px; /* Add padding to the entire footer content */
 }
 
 .footer-nav li a {
@@ -429,6 +435,200 @@ font-weight: bold;
   align-self: center;
 }
 
+
+
+
+
+
+
+
+/* //////////// MEDIA QUERIES */
+
+
+@media (max-width: 575.98px) {
+  .nav {
+    background-color: tomato;
+  }
+
+
+  .lemon-btn {
+    padding: 12px;
+    width: 140px;
+    font-size: 14px;
+  }
+  .header-box{  
+    justify-content: center;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  
+    text-align: center;
+  }
+
+  .header-text h1 {    
+    font-size: 50px; 
+    margin-bottom: -10px; 
+  }
+
+  .header-text h2 {
+    font-size: 34px;
+     }
+
+  .header-img {    
+   display: none;  
+  }
+
+
+
+
+
+
+
+  /* ///////////////////// SPECIALS */
+  .specials-header {
+    justify-content: center;
+  } 
+  
+  .specials-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  } 
+  
+  .specials-names {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .specials-menu-btn{
+    margin-left: 20px;
+  }  
+
+  /* /////////// TESTIMONIALS  */
+
+.testimonial-rating{
+text-align: center;
+}
+
+.testimonials-cards {
+  justify-content: center;
+  gap: 40px; 
+}
+
+
+/* ////////// RESTAURANT INFO  */
+
+.restaurant-section {
+  flex-direction: column;  
+}
+
+.restaurant-info {
+  min-width: 0%;
+  max-width: 100%;
+  flex: 1;
+}
+
+.chefs-img {
+  height: 300px;
+  width: 250px;
+  object-fit: cover;
+  object-position: 80%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+}
+
+.chef-one {
+  position: relative;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  box-shadow: 1px 1px 3cap black;
+
+}
+.chef-two{
+display: none;
+
+}
+
+
+.restaurant-location {
+  text-align: center;  
+}
+
+.restaurant-desc {  
+  font-size: 16px;
+}
+
+.section-title{
+text-align: center;
+}
+
+
+/* /// FOOTER  */
+
+
+.footer { 
+  background-color: #D9D9D9;
+  width: 100%;
+}
+
+
 .social-media li {
   cursor: pointer;
 }
+
+.footer li {
+  padding: 3px 0; 
+}
+.footer-item{
+  width: 40%;
+
+}
+
+.footer-header {
+  color: #495E57;
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; 
+  flex-wrap: wrap;
+  gap: 0 30px;
+  padding: 20px; /* Add padding to the entire footer content */
+}
+
+.footer-nav li a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-logo{
+  align-self: center;
+  
+}
+
+
+
+
+
+ 
+
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+@media (min-width: 1200px) {  }
+

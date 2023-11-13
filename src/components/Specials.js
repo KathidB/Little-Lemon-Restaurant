@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 
 function Specials () {
   return (
-    <section className='wrapper'>
+    <section className='wrapper special-section'>
       <div className='specials-header'>
         <h2 className='section-title'>Specials</h2>
         <Link to='/Menu'>
-          <button className='lemon-btn'>Online Menu</button>
+          <button className='lemon-btn specials-menu-btn'>Online Menu</button>
         </Link>
       </div>
       <div className='specials-cards'>
