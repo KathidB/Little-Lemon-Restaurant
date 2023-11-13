@@ -31,7 +31,11 @@ function ConfirmedBooking () {
         <p>
           Hello{' '}
           <span style={{ fontWeight: 'bold' }}>
-            {name} {lastName}
+            {`${name.slice(0, 1).toUpperCase()}${name
+              .slice(1)
+              .toLowerCase()} ${lastName.slice(0, 1).toUpperCase()}${lastName
+              .slice(1)
+              .toLowerCase()}`}
           </span>
         </p>
         <ul
