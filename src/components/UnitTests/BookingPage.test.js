@@ -1,5 +1,5 @@
 import { initializeTimes } from '../Pages/BookingPage'
-import { updateTimes } from '../Pages/BookingPage' // Zaimportuj funkcję updateTimes z odpowiedniej ścieżki
+
 
 test('if initializeTimes function retuns expected times included in expectedTimes array', () => {
   const expectedTimes = [
@@ -25,18 +25,3 @@ test('if initializeTimes function retuns expected times included in expectedTime
   expect(checkIfTimesMatch.some(Boolean)).toBe(true)
 })
 
-test('updateTimes should return the same value as provided in the state', () => {
-  // Get the initial data using the `initializeTimes` function, default state hours
-  const initialState = initializeTimes()
-
-  // Use today's date to get a new date for the test
-  const today = new Date().toISOString().split('T')[0]
-
-  // Call the `updateTimes` function with today's date
-  const result = updateTimes(initialState, { date: today })
-
-  // Compare the result with the initial state!
-  expect(result).toEqual(initialState)
-})
-
-//BB

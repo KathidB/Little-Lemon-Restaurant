@@ -43,7 +43,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
   function handleDateChange (e) {
     const newDate = e.target.value
     setDate(newDate)
-    setSelectedTime(null)
+    setSelectedTime('')
     onDateChange(newDate)
   }
 
@@ -53,7 +53,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
       lastName &&
       isEmailValid(email.value) &&
       date &&
-      selectedTime !== null &&
+      selectedTime !== '' &&
       typeof selectedTime !== 'object' &&
       guests >= 1 &&
       guests <= 10 &&
@@ -77,7 +77,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
   return (
     <div className='booking-form'>
       <form className='form' onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name</label>
+        <label data-testid='Name' htmlFor='name'>
+          Name
+        </label>
         <input
           value={name}
           onChange={e => setName(e.target.value)}
@@ -88,7 +90,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           required
         />
 
-        <label htmlFor='lastName'>Last name</label>
+        <label data-testid='Last name' htmlFor='lastName'>
+          Last name
+        </label>
         <input
           value={lastName}
           onChange={e => setLastName(e.target.value)}
@@ -99,7 +103,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           required
         />
 
-        <label htmlFor='email'>Email</label>
+        <label data-testid='Email' htmlFor='email'>
+          Email
+        </label>
         <input
           value={email.value}
           type='email'
@@ -117,17 +123,17 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           </p>
         ) : null}
 
-        <label data-testid='chooseDate' htmlFor='res-date'>
+        <label data-testid='Choose Date' htmlFor='res-date'>
           Choose Date
         </label>
         <input
           required
           value={date}
-          onChange={handleDateChange}
           type='date'
           id='res-date'
           min={today}
           max={nextYearDate}
+          onChange={handleDateChange}
         />
 
         {date.slice(0, 4) > nextYearDate.slice(0, 4) ? (
@@ -136,7 +142,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           </p>
         ) : null}
 
-        <label htmlFor='res-time'>Choose Time</label>
+        <label data-testid='Choose Time' htmlFor='res-time'>
+          Choose Time
+        </label>
         <select
           value={selectedTime}
           onChange={e => setSelectedTime(e.target.value)}
@@ -147,8 +155,11 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           ))}
         </select>
 
-        <label htmlFor='guests'>Number of guests</label>
+        <label data-testid='Number of guests' htmlFor='guests'>
+          Number of guests
+        </label>
         <input
+          required
           value={guests}
           onChange={e => setGuests(e.target.value)}
           type='number'
@@ -163,7 +174,9 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           </p>
         ) : null}
 
-        <label htmlFor='occasion'>Occasion</label>
+        <label data-testid='Occasion' htmlFor='occasion'>
+          Occasion
+        </label>
         <select
           value={occasion}
           onChange={e => setOccasion(e.target.value)}

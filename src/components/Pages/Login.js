@@ -15,7 +15,6 @@ function Login () {
 
   const handleSubmit = e => {
     e.preventDefault()
-    // Tutaj możesz dodać logikę logowania, np. wysłanie danych na serwer
     setEmail('')
     setPassword('')
     setIsTouched(false)

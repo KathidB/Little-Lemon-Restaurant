@@ -5,7 +5,7 @@ function ConfirmedBooking () {
   const { state } = useLocation()
   const navigate = useNavigate()
 
-  //If someone is trying to acces this component before make a reservation he's automatically moved to reservation page.
+  //If someone is trying to acces this component before making a reservation he's automatically moved to reservation page.
   useEffect(() => {
     if (!state) {
       navigate('/BookingPage')

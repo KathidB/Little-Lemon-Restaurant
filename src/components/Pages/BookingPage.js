@@ -15,7 +15,7 @@ export function updateTimes (state, action) {
 }
 
 function BookingPage () {
-  const [formStatus, setFormStatus] = useState(null)
+  const [formStatus, setFormStatus] = useState('')
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes())
   const navigate = useNavigate()
   //Function accepts action - as a result of dispatch from hangleDateChange.

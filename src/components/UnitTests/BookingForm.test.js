@@ -1,44 +1,97 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'; // Import userEvent
-
-import BookingForm from '../data/BookingForm';
+import { render, screen, fireEvent } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import BookingForm from '../data/BookingForm'
 
 test('Renders the BookingForm heading', () => {
-  const availableTimes = ['17:00'];
-  render(<BookingForm availableTimes={availableTimes} />);
+  const availableTimes = ['17:00']
+  render(<BookingForm availableTimes={availableTimes} />)
 
-  const headingElement = screen.getByLabelText('Choose Date');
+  const headingElement = screen.getByLabelText('Choose Date')
 
-  expect(headingElement).toBeInTheDocument();
-});
+  expect(headingElement).toBeInTheDocument()
+})
 
-test('submitting form with valid data calls submitForm', () => {
-  const availableTimes = ['12:00 PM']; // Adjust the availableTimes to match the options in your form
-  const mockSubmitForm = jest.fn();
-  render(<BookingForm availableTimes={availableTimes} submitForm={mockSubmitForm} />);
+describe('BookingForm Component', () => {
+  test('HTML5 validation is applied', () => {
+    render(
+      <BookingForm
+        availableTimes={['17:00']}
+        onDateChange={() => {}}
+        submitForm={() => {}}
+        formStatus={true}
+      />
+    )
 
-  // Simulate user input
-  userEvent.type(screen.getByLabelText('Name'), 'John');
-  userEvent.type(screen.getByLabelText('Last name'), 'Doe');
-  userEvent.type(screen.getByLabelText('Email'), 'john.doe@example.com');
-  userEvent.type(screen.getByLabelText('Number of guests'), '5');
+    // taking input label
+    const nameInput = screen.getByLabelText('Name')
+    const lastNameInput = screen.getByLabelText('Last name')
+    const dateInput = screen.getByLabelText('Choose Date')
+    const guestsInput = screen.getByLabelText('Number of guests')
 
-  // Select valid date
-  const validDate = new Date();
-  validDate.setDate(validDate.getDate() + 7);
-  userEvent.type(screen.getByLabelText('Choose Date'), validDate.toISOString().split('T')[0]);
+    // checking if required atribute exists
+    expect(nameInput).toHaveAttribute('required')
+    expect(lastNameInput).toHaveAttribute('required')
+    expect(dateInput).toHaveAttribute('required')
+    expect(guestsInput).toHaveAttribute('required')
+  })
 
-  // Select valid time
-  userEvent.selectOptions(screen.getByLabelText('Choose Time'), '12:00 PM');
+  test('checkValidation function', () => {
+    render(
+      <BookingForm
+        availableTimes={['17:00']}
+        onDateChange={() => {}}
+        submitForm={() => {}}
+        formStatus={true}
+      />
+    )
 
-  // Select valid occasion
-  userEvent.selectOptions(screen.getByLabelText('Occasion'), 'Birthday');
+    // Impelemted example test data to check the form.
+    userEvent.type(screen.getByLabelText('Name'), 'John')
+    userEvent.type(screen.getByLabelText('Last name'), 'Doe')
+    userEvent.type(screen.getByLabelText('Email'), 'test@example.com')
+    fireEvent.change(screen.getByLabelText('Number of guests'), {
+      target: { value: '5' }
+    })
+    fireEvent.change(screen.getByLabelText('Choose Date'), {
+      target: { value: '2023-12-01' }
+    })
+    fireEvent.change(screen.getByLabelText('Choose Time'), {
+      target: { value: '17:00' }
+    })
+    fireEvent.change(screen.getByLabelText('Occasion'), {
+      target: { value: 'Birthday' }
+    })
 
-  // Click the submit button
-  fireEvent.click(screen.getByText('Make Reservation'));
+    // Expect the form to be valid
+    expect(screen.getByText('Make Reservation')).not.toBeDisabled()
 
-  // Verify that submitForm is called with the correct arguments
-  expect(mockSubmitForm).toHaveBeenCalledWith('John', 'Doe', 'john.doe@example.com', expect.any(String), 5, 'Birthday', '12:00 PM');
-});
+    // Modify the form fields to make it invalid
+    userEvent.clear(screen.getByLabelText('Name'))
+    userEvent.clear(screen.getByLabelText('Last name'))
+    fireEvent.change(screen.getByLabelText('Number of guests'), {
+      target: { value: '0' }
+    })
 
-// Add similar tests for invalid cases
+    // Expect the form to be invalid
+    expect(screen.getByText('Make Reservation')).toBeDisabled()
+
+    // Test for invalid state
+    const invalidState = {
+      name: '',
+      lastName: '',
+      email: { value: 'invalid-email', isTouched: true },
+      date: '',
+      selectedTime: '',
+      guests: 0,
+      occasion: 'Choose occasion'
+    }
+
+    userEvent.clear(screen.getByLabelText('Name'))
+    userEvent.clear(screen.getByLabelText('Last name'))
+    fireEvent.change(screen.getByLabelText('Number of guests'), {
+      target: { value: invalidState.guests }
+    })
+
+    expect(screen.getByText('Make Reservation')).toBeDisabled()
+  })
+})
