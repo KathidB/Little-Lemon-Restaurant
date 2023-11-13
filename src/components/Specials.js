@@ -21,7 +21,9 @@ function Specials () {
                 <p className='specials-name'>{food.name}</p>
                 <p className='specials-prices'>{food.price}</p>
               </div>
-              <p className='specials-desc'>{food.description} </p>
+              <p className='specials-desc' aria-label='Food description'>
+                {food.description}{' '}
+              </p>
             </div>
 
             <button className='specials-btn'>

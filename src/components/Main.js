@@ -4,7 +4,6 @@ import Restaurant from './Restaurant'
 import Header from './Header'
 
 function Main () {
-  console.log('here')
   return (
     <main>
       <Header />

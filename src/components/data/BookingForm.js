@@ -81,6 +81,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Name
         </label>
         <input
+          aria-label='Enter your name'
           value={name}
           onChange={e => setName(e.target.value)}
           type='text'
@@ -94,6 +95,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Last name
         </label>
         <input
+          aria-label='Enter your last name'
           value={lastName}
           onChange={e => setLastName(e.target.value)}
           type='text'
@@ -107,6 +109,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Email
         </label>
         <input
+          aria-label='Enter your email'
           value={email.value}
           type='email'
           placeholder='Email'
@@ -127,6 +130,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Choose Date
         </label>
         <input
+          aria-label='Choose date of your reservation'
           required
           value={date}
           type='date'
@@ -146,6 +150,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Choose Time
         </label>
         <select
+          aria-label='Choose time of your reservation'
           value={selectedTime}
           onChange={e => setSelectedTime(e.target.value)}
           id='res-time'
@@ -159,6 +164,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Number of guests
         </label>
         <input
+          aria-label='Number of Guests'
           required
           value={guests}
           onChange={e => setGuests(e.target.value)}
@@ -178,6 +184,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           Occasion
         </label>
         <select
+          aria-label='Choose the occasion'
           value={occasion}
           onChange={e => setOccasion(e.target.value)}
           id='occasion'
@@ -191,6 +198,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
           className='login-btn form-btn'
           type='submit'
           disabled={!checkValidation()}
+          aria-label='Submit your reservation'
         >
           Make Reservation
         </button>
