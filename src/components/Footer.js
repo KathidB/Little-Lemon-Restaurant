@@ -81,6 +81,15 @@ function Footer () {
           </ul>
         </div>
       </div>
+      <p
+        style={{
+          fontSize: '8px',
+          textAlign: 'center',
+          margin: '0 auto'
+        }}
+      >
+        @Bogusz Web Design
+      </p>
     </footer>
   )
 }
