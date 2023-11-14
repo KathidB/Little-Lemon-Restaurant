@@ -13,8 +13,8 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Choose occasion')
 
-  // code hets todays date, and then adds one year to it,
-  // to set max date user can resever a table.
+  // we get todays date, and then add one year to it,
+  // to set max date user can reserve a table.
   const today = new Date().toISOString().split('T')[0]
   const nextYear = new Date()
   nextYear.setFullYear(nextYear.getFullYear() + 1)
@@ -202,7 +202,11 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
         >
           Make Reservation
         </button>
-        {formStatus === false ? <p>Form send failed. Try again.</p> : null}
+        {formStatus === false ? (
+          <p style={{ textAlign: 'center', color: 'tomato' }}>
+            Form send failed. Try again.
+          </p>
+        ) : null}
       </form>
 
       <img

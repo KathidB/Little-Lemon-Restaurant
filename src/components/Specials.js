@@ -26,17 +26,23 @@ function Specials () {
               </p>
             </div>
 
-            <button className='specials-btn'>
-              Order a delivery{' '}
-              <img
-                style={{ width: '20px' }}
-                src={delivery}
-                alt='devilery button'
-              />
-            </button>
+            <Link to='/OrderOnline'>
+              {' '}
+              <button className='specials-btn'>
+                Order a delivery{' '}
+                <img
+                  style={{ width: '20px' }}
+                  src={delivery}
+                  alt='devilery button'
+                />
+              </button>
+            </Link>
           </div>
         ))}
       </div>
+      <Link to='/Menu'>
+        <button className='lemon-btn specials-mobile-btn'>Online Menu</button>
+      </Link>
     </section>
   )
 }

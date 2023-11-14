@@ -13,6 +13,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+/* ///// STUFF */
+
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -40,7 +42,6 @@ code {
 .section-title {
   font-size: 32px;
   font-family: 'Karla', sans-serif;
-
 }
 
 /* // MAIN MENU  */
@@ -53,7 +54,6 @@ code {
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .nav li a {
@@ -71,10 +71,19 @@ code {
   margin-right: 20px;
 }
 
+/* Hamburger Menu  */
+.hamburger-btn {
+  display: none;
+}
+
 /* /// HEADER */
 
 .header {
   background-color: #495E57;
+}
+
+.header-mobile-img {
+  display: none;
 }
 
 .header-box {
@@ -128,10 +137,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
-
-
 
 .specials-cards {
   display: flex;
@@ -146,6 +152,7 @@ code {
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
+  height: 420px;
   margin-bottom: 20px;
   background-color: #EDEFEE;
   border-top-right-radius: 16px;
@@ -202,6 +209,10 @@ code {
   color: #b83a00;
 }
 
+.specials-mobile-btn {
+  display: none;
+}
+
 
 /* // TESTIMONIALS  */
 
@@ -220,7 +231,7 @@ code {
   align-content: center;
   flex-wrap: wrap;
   gap: 20px;
- 
+
 }
 
 .testimonial-card {
@@ -243,7 +254,7 @@ code {
   box-shadow: 0 0 1px black;
 }
 
-.testimonial-rating{
+.testimonial-rating {
   text-align: right;
 }
 
@@ -253,7 +264,7 @@ code {
 .restaurant-section {
   display: flex;
   justify-content: space-between;
- 
+
   flex-wrap: wrap;
   gap: 20px;
   padding-bottom: 70px;
@@ -271,6 +282,7 @@ code {
   object-fit: cover;
   object-position: 80%;
   border-radius: 10px;
+  /* //uploaded by BB */
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
 }
 
@@ -278,7 +290,6 @@ code {
   position: relative;
   left: 50px;
   top: 50px;
-
 }
 
 
@@ -297,14 +308,12 @@ code {
   font-family: Karla;
   font-size: 20px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
 }
 
-
 /* // BOOKING PAGE */
 
-.booking-form{
+.booking-form {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -321,18 +330,19 @@ form {
 
 }
 
-.booking-burger{
+.booking-burger {
   width: 400px;
   height: 450px;
   border-radius: 8px;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
 }
 
-label{
-font-weight: 500;
+label {
+  font-weight: 500;
 }
 
-input, select {
+input,
+select {
   box-sizing: border-box;
   margin: 5px 0;
   width: 100%;
@@ -344,7 +354,7 @@ input, select {
 
 }
 
-.submit-form{
+.submit-form {
   align-self: center;
   width: 150px;
 }
@@ -387,8 +397,8 @@ input, select {
 
 /* // CONFIRMED BOOKING */
 
-.booking-info li span{
-font-weight: bold;
+.booking-info li span {
+  font-weight: bold;
 }
 
 
@@ -396,7 +406,7 @@ font-weight: bold;
 /* /// FOOTER  */
 
 
-.footer { 
+.footer {
   background-color: #D9D9D9;
   width: 100%;
 }
@@ -407,9 +417,10 @@ font-weight: bold;
 }
 
 .footer li {
-  padding: 3px 0; 
+  padding: 3px 0;
 }
-.footer-item{
+
+.footer-item {
   width: 170px;
 }
 
@@ -420,10 +431,14 @@ font-weight: bold;
 .footer-box {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items at the start for proper spacing */
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 20px; /* Add padding to the entire footer content */
+  padding: 20px;
+}
+
+.footer-box> :first-child {
+  align-self: center;
 }
 
 .footer-nav li a {
@@ -431,32 +446,58 @@ font-weight: bold;
   text-decoration: none;
 }
 
-.footer-logo{
-  align-self: center;
-}
-
-
-
-
-
-
-
-
-/* //////////// MEDIA QUERIES */
+/* //////////// MEDIA QUERIES/////////////////////////// */
 
 
 @media (max-width: 575.98px) {
+
+  /* //////// HAMBURGER MENU */
+  .hamburger-btn {
+    z-index: 2;
+    display: block;
+  }
+
   .nav {
-    background-color: tomato;
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 420px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  .nav li a {
+    color: black;
+    font-size: 25px;
+  }
+
+  .nav li:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .hamburger-display-none {
+    display: none;
+  }
+
+  .hamburger-display-flex {
+    display: flex;
+
   }
 
 
+  /* //////// HEADER */
   .lemon-btn {
     padding: 12px;
     width: 140px;
     font-size: 14px;
   }
-  .header-box{  
+
+  .header-box {
     justify-content: center;
   }
 
@@ -465,170 +506,595 @@ font-weight: bold;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;  
+    width: 100%;
     text-align: center;
   }
 
-  .header-text h1 {    
-    font-size: 50px; 
-    margin-bottom: -10px; 
+  .header-text h1 {
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: -15px;
   }
 
   .header-text h2 {
     font-size: 34px;
-     }
-
-  .header-img {    
-   display: none;  
   }
 
+  .header-img {
+    display: none;
+  }
 
-
-
-
-
+  .header-mobile-img {
+    display: block;
+    height: 250px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+  }
 
   /* ///////////////////// SPECIALS */
+
+  .special-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .specials-header {
     justify-content: center;
-  } 
-  
+  }
+
   .specials-cards {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 10px;
-  } 
-  
+  }
+
   .specials-names {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .specials-menu-btn{
-    margin-left: 20px;
-  }  
+  .specials-menu-btn {
+    display: none;
+  }
+
+  .specials-mobile-btn {
+    display: inline-block;
+  }
+
 
   /* /////////// TESTIMONIALS  */
 
-.testimonial-rating{
-text-align: center;
+  .testimonial-rating {
+    text-align: center;
+  }
+
+  .testimonials-cards {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    padding: 10px;
+
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+
+  }
+
+
+  /* ////////// RESTAURANT INFO  */
+
+  .restaurant-section {
+    flex-direction: column;
+
+  }
+
+  .restaurant-info {
+    min-width: 0%;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .chefs-img {
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+    object-position: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+  }
+
+  .chef-one {
+    position: relative;
+    left: 0;
+    top: 0px;
+    width: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
+
+  .chef-two {
+    display: none;
+  }
+
+  .restaurant-location {
+    text-align: center;
+  }
+
+  .restaurant-desc {
+    font-size: 16px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+
+  /* /// FOOTER  */
+
+
+  .footer {
+    background-color: #D9D9D9;
+    width: 100%;
+  }
+
+
+  .social-media li {
+    cursor: pointer;
+  }
+
+  .footer li {
+    padding: 3px 0;
+  }
+
+  .footer-item {
+    width: 40%;
+  }
+
+  .footer-header {
+    color: #495E57;
+  }
+
+  .footer-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 30px;
+    padding: 20px;
+  }
+
+  .footer-nav li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .footer-logo {
+    align-self: center;
+  }
+
+  /* ////// Reservation Form */
+  .booking-burger {
+    height: 100%;
+    width: 95%;
+  }
 }
 
-.testimonials-cards {
-  justify-content: center;
-  gap: 40px; 
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+  /* //////// HAMBURGER MENU */
+  .hamburger-btn {
+    z-index: 2;
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 420px;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    justify-content: space-around;
+  }
+
+  .nav li a {
+    color: black;
+    font-size: 25px;
+  }
+
+  .nav li:not(:last-child) {
+    margin-right: 0px;
+  }
+
+  .hamburger-display-none {
+    display: none;
+  }
+
+  .hamburger-display-flex {
+    display: flex;
+
+  }
+
+
+  /* //////// HEADER */
+  .lemon-btn {
+    padding: 12px;
+    width: 150px;
+    font-size: 15px;
+  }
+
+  .header-box {
+    justify-content: center;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-text h1 {
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: -15px;
+  }
+
+  .header-text h2 {
+    font-size: 38px;
+  }
+
+  .header-img {
+    display: none;
+  }
+
+  .header-mobile-img {
+    display: block;
+    height: 350px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+  }
+
+  /* ///////////////////// SPECIALS */
+
+  .special-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .specials-header {
+    justify-content: center;
+  }
+
+  .specials-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+
+  .specials-names {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .specials-menu-btn {
+    display: none;
+  }
+
+  .specials-mobile-btn {
+    display: inline-block;
+  }
+
+
+  /* /////////// TESTIMONIALS  */
+
+  .testimonial-rating {
+    text-align: center;
+  }
+
+  .testimonials-cards {
+    justify-content: space-evenly;
+    gap: 40px;
+  }
+
+  .testimonial-card {
+    width: 280px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
+
+
+  /* ////////// RESTAURANT INFO  */
+
+  .restaurant-section {
+    flex-direction: column;
+  }
+
+  .restaurant-info {
+    min-width: 0%;
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .chefs-img {
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
+  }
+
+  .chef-one {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    object-position: top center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
+
+  .chef-two {
+    display: none;
+  }
+
+  .restaurant-location {
+    text-align: center;
+  }
+
+  .restaurant-desc {
+    font-size: 16px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+
+  /* /// FOOTER  */
+
+
+  .footer {
+    background-color: #D9D9D9;
+    width: 100%;
+  }
+
+
+  .social-media li {
+    cursor: pointer;
+  }
+
+  .footer li {
+    padding: 3px 0;
+  }
+
+  .footer-item {
+    width: 40%;
+  }
+
+  .footer-header {
+    color: #495E57;
+  }
+
+  .footer-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 30px;
+    padding: 20px;
+  }
+
+  .footer-nav li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .footer-logo {
+    align-self: center;
+  }
+
+  /* ////// Reservation Form */
+  .booking-burger {
+    height: 100%;
+    width: 50%;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
 
-/* ////////// RESTAURANT INFO  */
-
-.restaurant-section {
-  flex-direction: column;  
-}
-
-.restaurant-info {
-  min-width: 0%;
-  max-width: 100%;
-  flex: 1;
-}
-
-.chefs-img {
-  height: 300px;
-  width: 250px;
-  object-fit: cover;
-  object-position: 80%;
-  border-radius: 10px;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.473);
-}
-
-.chef-one {
-  position: relative;
-  left: 0;
-  top: 0px;
-  width: 100%;
-  box-shadow: 1px 1px 3cap black;
-
-}
-.chef-two{
-display: none;
-
-}
-
-
-.restaurant-location {
-  text-align: center;  
-}
-
-.restaurant-desc {  
-  font-size: 16px;
-}
-
-.section-title{
-text-align: center;
-}
-
-
-/* /// FOOTER  */
-
-
-.footer { 
-  background-color: #D9D9D9;
-  width: 100%;
-}
-
-
-.social-media li {
-  cursor: pointer;
-}
-
-.footer li {
-  padding: 3px 0; 
-}
-.footer-item{
-  width: 40%;
-
-}
-
-.footer-header {
-  color: #495E57;
-}
-
-.footer-box {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; 
-  flex-wrap: wrap;
-  gap: 0 30px;
-  padding: 20px; /* Add padding to the entire footer content */
-}
-
-.footer-nav li a {
-  color: black;
-  text-decoration: none;
-}
-
-.footer-logo{
-  align-self: center;
-  
-}
-
-
-
-
+  /* //////// HAMBURGER MENU */
+ 
 
  
 
+
+  /* //////// HEADER */
+ 
+
+
+
+  /* ///////////////////// SPECIALS */
+
+  .special-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ 
+
+  .specials-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;   
+  }
+
+  
+
+  .specials-menu-btn {
+    display: none;
+  }
+
+  .specials-mobile-btn {
+    display: inline-block;
+  }
+
+
+  /* /////////// TESTIMONIALS  */
+
+  .testimonial-rating {
+    text-align: center;
+  }
+
+  .testimonials-cards {
+    justify-content: space-around;
+    gap: 40px;
+  }
+
+  .testimonial-card {
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
+
+
+  /* ////////// RESTAURANT INFO  */
+
+  .restaurant-section {
+    flex-direction: column;
+  }
+
+  .restaurant-info {
+    min-width: 0%;
+    max-width: 100%;
+    flex: 1;
+  }
+
+
+
+  .chef-one {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    object-position: top center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
+
+  .chef-two {
+   display: none;
+  }
+
+  .restaurant-location {
+    text-align: center;
+  }
+
+  .restaurant-desc {
+    font-size: 18px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+
+  /* /// FOOTER  */
+
+
+  .footer {
+    background-color: #D9D9D9;
+    width: 100%;
+  }
+
+  .footer-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 30px;
+    padding: 20px;
+  }
+
+
+
+  .social-media li {
+    cursor: pointer;
+  }
+
+  .footer li {
+    padding: 3px 0;
+  }
+
+  .footer-item {
+    width: 20%;
+  }
+
+  .footer-header {
+    color: #495E57;
+  }
+
+
+  .footer-nav li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .footer-logo {
+    align-self: center;
+  }
+
+  /* ////// Reservation Form */
+  .booking-burger {
+    height: 100%;
+    width: 50%;
+  }
+
+
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .testimonial-rating {
+    text-align: center;
+  }
 
-@media (min-width: 576px) and (max-width: 767.98px) {  }
+  .testimonials-cards {
+    justify-content: space-around;
+    gap: 20px;
+  }
 
-@media (min-width: 768px) and (max-width: 991.98px) {  }
+  .testimonial-card {
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  }
 
-@media (min-width: 992px) and (max-width: 1199.98px) {  }
-
-@media (min-width: 1200px) {  }
+}
 
