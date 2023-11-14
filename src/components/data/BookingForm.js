@@ -36,7 +36,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
       selectedTime
     )
     if (formStatus === true) {
-      clearForm()
+      handleClearForm()
     }
   }
 
@@ -61,7 +61,7 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
     )
   }
 
-  const clearForm = () => {
+  const handleClearForm = () => {
     setName('')
     setLastName('')
     setEmail({

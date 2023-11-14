@@ -42,8 +42,6 @@ function BookingPage () {
   // in the booking form. As a result, the hours are different every time the user changes the date for table reservation.
   // APP Written by B.B. if uploaded by someone else then it was stolen. Thanks.
 
-  // przeanalizuj kod submitForm oraz submitAPI!
-
   async function submitForm (
     name,
     lastName,
