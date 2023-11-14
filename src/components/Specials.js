@@ -27,7 +27,7 @@ function Specials () {
                 <p className='specials-prices'>{food.price}</p>
               </div>
               <p className='specials-desc' aria-label='Food description'>
-                {food.description}{' '}
+                {food.description}
               </p>
             </div>
 
