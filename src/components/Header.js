@@ -1,4 +1,4 @@
-import HeaderImg from '../assets/images/restauranfood.jpg'
+import HeaderImg from '../assets/images/restauranfood.webp'
 import { Link } from 'react-router-dom'
 
 function Header () {
@@ -9,6 +9,7 @@ function Header () {
           <h1>Little Lemon</h1>
           <h2>Chicago</h2>
           <img
+            loading='lazy'
             className='header-mobile-img'
             src={HeaderImg}
             alt='Restaurant food'

@@ -1,6 +1,6 @@
-import GreekSalad from '../../assets/images/greeksalad.jpg'
-import Bruschetta from '../../assets/images/bruchetta.png'
-import LemonDesert from '../../assets/images/lemondessert.jpg'
+import GreekSalad from '../../assets/images/greeksalad.webp'
+import Bruschetta from '../../assets/images/bruchetta.webp'
+import LemonDesert from '../../assets/images/lemondessert.webp'
 
 const recipesArray = [
   {

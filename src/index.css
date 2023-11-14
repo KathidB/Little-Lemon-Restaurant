@@ -27,14 +27,18 @@ code {
   padding: 0;
 }
 
+
 .lemon-btn {
+  color: black;
   padding: 16px;
   width: 180px;
   border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;  
   background-color: #F4CE14;
   border: transparent;
-  font-weight: bold;
-  font-size: 16px;
+  text-decoration: none; 
+  text-align: center;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
   cursor: pointer;
 }
@@ -417,7 +421,7 @@ select {
 }
 
 .footer li {
-  padding: 3px 0;
+  padding: 9px 0;
 }
 
 .footer-item {
@@ -441,10 +445,14 @@ select {
   align-self: center;
 }
 
+
+
 .footer-nav li a {
   color: black;
   text-decoration: none;
 }
+
+
 
 /* //////////// MEDIA QUERIES/////////////////////////// */
 
@@ -495,6 +503,7 @@ select {
     padding: 12px;
     width: 140px;
     font-size: 14px;
+  
   }
 
   .header-box {
@@ -649,9 +658,7 @@ select {
     cursor: pointer;
   }
 
-  .footer li {
-    padding: 3px 0;
-  }
+
 
   .footer-item {
     width: 40%;
@@ -887,9 +894,7 @@ select {
     cursor: pointer;
   }
 
-  .footer li {
-    padding: 3px 0;
-  }
+
 
   .footer-item {
     width: 40%;
@@ -1037,7 +1042,7 @@ select {
   .footer-box {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 0 30px;
     padding: 20px;
@@ -1049,9 +1054,7 @@ select {
     cursor: pointer;
   }
 
-  .footer li {
-    padding: 3px 0;
-  }
+
 
   .footer-item {
     width: 20%;
@@ -1060,6 +1063,7 @@ select {
   .footer-header {
     color: #495E57;
   }
+
 
 
   .footer-nav li a {

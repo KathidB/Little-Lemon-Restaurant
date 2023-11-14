@@ -1,7 +1,7 @@
-import userOne from '../../assets/images/user1.jpg'
-import userTwo from '../../assets/images/user2.jpg'
-import userThree from '../../assets/images/user3.jpg'
-import userFour from '../../assets/images/user4.jpg'
+import userOne from '../../assets/images/user1.webp'
+import userTwo from '../../assets/images/user2.webp'
+import userThree from '../../assets/images/user3.webp'
+import userFour from '../../assets/images/user4.webp'
 
 const UserReviews = [
   {

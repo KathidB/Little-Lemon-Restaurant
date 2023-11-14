@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import vertiburger from '../../assets/images/vertiburger.jpg'
+import vertiburger from '../../assets/images/vertiburger.webp'
 
 function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) {
   const [name, setName] = useState('')

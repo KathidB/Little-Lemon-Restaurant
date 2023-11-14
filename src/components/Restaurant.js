@@ -1,5 +1,5 @@
-import imageChefOne from '../assets/images/chefsAA.jpg'
-import imageChefTwo from '../assets/images/chefsBB.jpg'
+import imageChefOne from '../assets/images/chefsAA.webp'
+import imageChefTwo from '../assets/images/chefsBB.webp'
 
 const Restaurant = () => {
   return (

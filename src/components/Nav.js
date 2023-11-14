@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/images/Logo.svg'
-import hamOpen from '../assets/images/hamOpen.png'
-import hamClose from '../assets/images/hamClose.png'
+import hamOpen from '../assets/images/hamOpen.webp'
+import hamClose from '../assets/images/hamClose.webp'
 
 function Nav () {
   const [open, setOpen] = useState('hamburger-display-none')
@@ -49,13 +49,13 @@ function Nav () {
       >
         {open === 'hamburger-display-none' ? (
           <img
-            style={{ width: '40px' }}
+            style={{ width: '50px' }}
             src={hamOpen}
             alt='open hamburger menu icon'
           />
         ) : (
           <img
-            style={{ width: '40px' }}
+            style={{ width: '50px' }}
             src={hamClose}
             alt='open hamburger menu icon'
           />

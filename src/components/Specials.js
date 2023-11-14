@@ -8,14 +8,19 @@ function Specials () {
     <section className='wrapper special-section'>
       <div className='specials-header'>
         <h2 className='section-title'>Specials</h2>
-        <Link to='/Menu'>
-          <button className='lemon-btn specials-menu-btn'>Online Menu</button>
+        <Link to='/Menu' className='lemon-btn specials-menu-btn'>
+          Online Menu
         </Link>
       </div>
       <div className='specials-cards'>
         {recipesArray.map(food => (
           <div key={food.id} className='specials-card'>
-            <img className='specials-img' src={food.img} alt='Top specials' />
+            <img
+              className='specials-img'
+              src={food.img}
+              alt='Top specials'
+              loading='lazy'
+            />
             <div className='specials-info'>
               <div className='specials-names'>
                 <p className='specials-name'>{food.name}</p>
@@ -40,8 +45,8 @@ function Specials () {
           </div>
         ))}
       </div>
-      <Link to='/Menu'>
-        <button className='lemon-btn specials-mobile-btn'>Online Menu</button>
+      <Link to='/Menu' className='lemon-btn specials-mobile-btn'>
+        Online Menu
       </Link>
     </section>
   )

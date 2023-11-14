@@ -1,6 +1,4 @@
-// import FooterImg from '../assets/images/restaurant footer.jpg'
-import FooterImg2 from '../assets/images/footer-logo2.png'
-// import FooterLogo from '../assets/images/footer-logo.png'
+import FooterImg2 from '../assets/images/footer-logo2.webp'
 
 import { Link } from 'react-router-dom'
 
@@ -13,13 +11,12 @@ function Footer () {
             width='114'
             height='200'
             className='footer-logo'
-            // style={{ height: 'auto', width: '200px' }}
             src={FooterImg2}
             alt='Restaurant logo in the footer section'
           />
         </div>
         <div className='footer-item'>
-          <h3 className='footer-header'>Doormat Navigation</h3>
+          <h3 className='footer-header'>Navigation</h3>
           <ul className='footer-nav list-tyle'>
             <li>
               <Link to='/'>Home</Link>
@@ -58,7 +55,7 @@ function Footer () {
           </ul>
         </div>
         <div className='footer-item'>
-          <h3 className='footer-header'>Social Media Links</h3>
+          <h3 className='footer-header'>Social Media</h3>
           <ul className='list-tyle social-media'>
             <li>Facebook</li>
             <li>Instagram</li>
