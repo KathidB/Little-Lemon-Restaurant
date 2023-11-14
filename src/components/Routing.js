@@ -11,7 +11,7 @@ function Routing () {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='' element={<Main />} />
         <Route path='/About' element={<About />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/BookingPage' element={<BookingPage />} />
