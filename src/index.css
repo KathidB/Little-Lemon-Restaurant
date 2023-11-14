@@ -616,6 +616,7 @@ select {
     top: 0px;
     width: 100%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+    z-index: -1;
   }
 
   .chef-two {
@@ -853,6 +854,7 @@ select {
     width: 100%;
     object-position: top center;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+    z-index: -1;
   }
 
   .chef-two {
