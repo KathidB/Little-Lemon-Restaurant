@@ -1,5 +1,9 @@
 # LIVE VERSION:
+## My solution for the Meta Front-End Developer Capstone project.
 https://main--iridescent-tanuki-9b4851.netlify.app
+
+
+
 
 # Getting Started with Create React App
 
