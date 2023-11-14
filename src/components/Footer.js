@@ -3,6 +3,13 @@ import FooterImg2 from '../assets/images/footer-logo2.webp'
 import { Link } from 'react-router-dom'
 
 function Footer () {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <footer className='footer'>
       <div className='wrapper footer-box'>
@@ -19,22 +26,34 @@ function Footer () {
           <h3 className='footer-header'>Navigation</h3>
           <ul className='footer-nav list-tyle'>
             <li>
-              <Link to='/'>Home</Link>
+              <Link to='/' onClick={scrollToTop}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to='/About'>About</Link>
+              <Link to='/About' onClick={scrollToTop}>
+                About
+              </Link>
             </li>
             <li>
-              <Link to='/Menu'>Menu</Link>
+              <Link to='/Menu' onClick={scrollToTop}>
+                Menu
+              </Link>
             </li>
             <li>
-              <Link to='/BookingPage'>Reservations</Link>
+              <Link to='/BookingPage' onClick={scrollToTop}>
+                Reservations
+              </Link>
             </li>
             <li>
-              <Link to='/OrderOnline'>Order Online</Link>
+              <Link to='/OrderOnline' onClick={scrollToTop}>
+                Order Online
+              </Link>
             </li>
             <li>
-              <Link to='/Login'>Login</Link>
+              <Link to='/Login' onClick={scrollToTop}>
+                Login
+              </Link>
             </li>
           </ul>
         </div>
@@ -44,7 +63,6 @@ function Footer () {
             <li>Chicago Berkley St.</li>
             <li>+01 123412345</li>
             <li>
-              {' '}
               <a
                 style={{ textDecoration: 'none', color: 'black' }}
                 href={`mailto:${'littlelemon@lemon.com'}`}
@@ -66,5 +84,5 @@ function Footer () {
     </footer>
   )
 }
-//BB
+
 export default Footer
