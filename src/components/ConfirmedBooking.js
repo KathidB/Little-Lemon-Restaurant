@@ -1,23 +1,28 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useEffect, useContext } from 'react'
+import { BookingContext } from './data/BookingContext'
 
 function ConfirmedBooking () {
-  const { state } = useLocation()
-  const { name, lastName, email, date, guests, occasion, selectedTime } = state
+  const { bookingData } = useContext(BookingContext)
   const navigate = useNavigate()
 
-  //If someone is trying to acces this component before making a reservation he's automatically moved to reservation page.
   useEffect(() => {
-    if (!state) {
+    if (!bookingData) {
       navigate('/BookingPage')
     }
-  }, [state, navigate])
+  }, [bookingData, navigate])
 
-  if (!state) {
-    return <p>Brak danych rezerwacji. Wróć i dokonaj rezerwacji.</p>
+  if (!bookingData) {
+    return (
+      <p>
+        No data, please go back to the form and fill all neccesarry information.
+      </p>
+    )
   }
 
-  
+  console.log(bookingData.name)
+  const { name, lastName, email, date, guests, occasion, selectedTime } =
+    bookingData
 
   return (
     <>
@@ -70,5 +75,5 @@ function ConfirmedBooking () {
     </>
   )
 }
-//B.B
+
 export default ConfirmedBooking

@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { BookingProvider } from './data/BookingContext'
 import Main from './Main'
 import About from './Pages/About'
 import Menu from './Pages/Menu'
@@ -9,7 +10,7 @@ import ConfirmedBooking from './ConfirmedBooking'
 
 function Routing () {
   return (
-    <>
+    <BookingProvider>
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/About' element={<About />} />
@@ -19,7 +20,7 @@ function Routing () {
         <Route path='/Login' element={<Login />} />
         <Route path='/ConfirmedBooking' element={<ConfirmedBooking />} />
       </Routes>
-    </>
+    </BookingProvider>
   )
 }
 
