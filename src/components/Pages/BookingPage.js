@@ -76,15 +76,17 @@ function BookingPage () {
   }
 
   return (
-    <div className='wrapper'>
-      <h2 style={{ textAlign: 'center' }}>Booking Page</h2>
-      <BookingForm
-        submitForm={submitForm}
-        availableTimes={availableTimes}
-        dispatch={dispatch}
-        onDateChange={handleDateChange}
-        formStatus={formStatus}
-      />
+    <div className='booking-page'>
+      <div className='wrapper'>
+        <h2 style={{ textAlign: 'center' }}>Booking Page</h2>
+        <BookingForm
+          submitForm={submitForm}
+          availableTimes={availableTimes}
+          dispatch={dispatch}
+          onDateChange={handleDateChange}
+          formStatus={formStatus}
+        />
+      </div>
     </div>
   )
 }

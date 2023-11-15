@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 function ConfirmedBooking () {
   const { state } = useLocation()
+  const { name, lastName, email, date, guests, occasion, selectedTime } = state
   const navigate = useNavigate()
 
   //If someone is trying to acces this component before making a reservation he's automatically moved to reservation page.
@@ -16,7 +17,7 @@ function ConfirmedBooking () {
     return <p>Brak danych rezerwacji. Wróć i dokonaj rezerwacji.</p>
   }
 
-  const { name, lastName, email, date, guests, occasion, selectedTime } = state
+  
 
   return (
     <>
