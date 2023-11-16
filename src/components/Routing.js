@@ -16,9 +16,9 @@ function Routing () {
         <Route path='/About' element={<About />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/BookingPage' element={<BookingPage />} />
+        <Route path='/ConfirmedBooking' element={<ConfirmedBooking />} />
         <Route path='/OrderOnline' element={<OrderOnline />} />
         <Route path='/Login' element={<Login />} />
-        <Route path='/ConfirmedBooking' element={<ConfirmedBooking />} />
       </Routes>
     </BookingProvider>
   )

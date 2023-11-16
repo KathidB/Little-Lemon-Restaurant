@@ -12,9 +12,6 @@ function BookingForm ({ availableTimes, onDateChange, submitForm, formStatus }) 
   const [selectedTime, setSelectedTime] = useState(availableTimes[0])
   const [guests, setGuests] = useState(1)
   const [occasion, setOccasion] = useState('Choose occasion')
-
-  // we get todays date, and then add one year to it,
-  // to set max date user can reserve a table.
   const today = new Date().toISOString().split('T')[0]
   const nextYear = new Date()
   nextYear.setFullYear(nextYear.getFullYear() + 1)

@@ -14,13 +14,15 @@ function Footer () {
     <footer className='footer'>
       <div className='wrapper footer-box'>
         <div className='footer-item'>
-          <img
-            width='114'
-            height='200'
-            className='footer-logo'
-            src={FooterImg2}
-            alt='Restaurant logo in the footer section'
-          />
+          <Link to='/'>
+            <img
+              width='114'
+              height='200'
+              className='footer-logo'
+              src={FooterImg2}
+              alt='Restaurant logo in the footer section'
+            />
+          </Link>
         </div>
         <div className='footer-item'>
           <h3 className='footer-header'>Navigation</h3>
